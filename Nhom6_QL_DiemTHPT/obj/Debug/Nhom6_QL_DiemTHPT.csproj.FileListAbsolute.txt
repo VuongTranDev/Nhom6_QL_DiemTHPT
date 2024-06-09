@@ -17,23 +17,3 @@ D:\Study\HK 6\TH PTTKHT\Project\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\En
 D:\Study\HK 6\TH PTTKHT\Project\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.csproj.CopyComplete
 D:\Study\HK 6\TH PTTKHT\Project\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.exe
 D:\Study\HK 6\TH PTTKHT\Project\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.pdb
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\Nhom6_QL_DiemTHPT.exe.config
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\Nhom6_QL_DiemTHPT.exe
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\Nhom6_QL_DiemTHPT.pdb
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\Dapper.dll
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\EntityFramework.dll
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\EntityFramework.SqlServer.dll
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\Dapper.xml
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\EntityFramework.xml
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\EntityFramework.SqlServer.xml
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.csproj.AssemblyReference.cache
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.Diem.resources
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.HocBa.resources
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.HocSinhGUI.resources
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.XepLop.resources
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.Properties.Resources.resources
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.csproj.GenerateResource.cache
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.csproj.CoreCompileInputs.cache
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.csproj.CopyComplete
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.exe
-D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.pdb
