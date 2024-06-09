@@ -10,6 +10,7 @@ namespace Nhom6_QL_DiemTHPT.DAO
 {
     public static class DBConnection
     {
+
         private static string con = "Data Source=DESKTOP-PM2GBTG;Initial Catalog=QL_DIEM_THPT;Persist Security Info=True;User ID=sa;Password=123";
         public static IDbConnection GetConnection()
         {
