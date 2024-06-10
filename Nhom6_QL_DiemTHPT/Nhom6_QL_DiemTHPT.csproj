@@ -63,6 +63,7 @@
     <Compile Include="DAO\HocBaDAO.cs" />
     <Compile Include="DAO\HocKyDAO.cs" />
     <Compile Include="DAO\HocSinhDAO.cs" />
+    <Compile Include="DAO\HocSinh_LopDAO.cs" />
     <Compile Include="DAO\LopDAO.cs" />
     <Compile Include="DAO\ThongTinCaNhanDAO.cs" />
     <Compile Include="DTO\HocBaDTO.cs" />
