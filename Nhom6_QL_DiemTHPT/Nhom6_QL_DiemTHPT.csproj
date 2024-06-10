@@ -66,13 +66,26 @@
     <Compile Include="DAO\HocSinh_LopDAO.cs" />
     <Compile Include="DAO\LopDAO.cs" />
     <Compile Include="DAO\ThongTinCaNhanDAO.cs" />
-    <Compile Include="DTO\HocBaDTO.cs" />
-    <Compile Include="DTO\HocKyDTO.cs" />
-    <Compile Include="DTO\HocSinhDTO.cs" />
-    <Compile Include="DTO\LopDTO.cs" />
-    <Compile Include="DTO\MonHocDTO.cs" />
+    <Compile Include="DTO\DIEM.cs" />
     <Compile Include="DTO\DiemDTO.cs" />
+    <Compile Include="DTO\GIANGDAY.cs" />
+    <Compile Include="DTO\GIAOVIEN.cs" />
+    <Compile Include="DTO\HOCBA.cs" />
+    <Compile Include="DTO\HocBaDTO.cs" />
+    <Compile Include="DTO\HOCKY.cs" />
+    <Compile Include="DTO\HocKyDTO.cs" />
+    <Compile Include="DTO\HOCSINH.cs" />
+    <Compile Include="DTO\HocSinhDTO.cs" />
+    <Compile Include="DTO\HOCSINH_LOP.cs" />
+    <Compile Include="DTO\LOP.cs" />
+    <Compile Include="DTO\LopDTO.cs" />
+    <Compile Include="DTO\MONHOC.cs" />
+    <Compile Include="DTO\MonHocDTO.cs" />
+    <Compile Include="DTO\Nhom6_QL_DiemTHPT.cs" />
+    <Compile Include="DTO\TAIKHOAN.cs" />
+    <Compile Include="DTO\THONGTINCANHAN.cs" />
     <Compile Include="DTO\ThongTinCaNhanDTO.cs" />
+    <Compile Include="DTO\TRUONG.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

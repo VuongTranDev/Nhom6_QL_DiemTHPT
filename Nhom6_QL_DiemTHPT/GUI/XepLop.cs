@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Nhom6_QL_DiemTHPT.DAO;
+using Nhom6_QL_DiemTHPT.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,10 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Nhom6_QL_DiemTHPT.GUI
 {
     public partial class XepLop : Form
     {
+        LopDAO lopDAO = new LopDAO();
+        HocSinh_LopDAO hocSinh_LopDAO = new HocSinh_LopDAO();
         public XepLop()
         {
             InitializeComponent();
@@ -27,10 +32,30 @@ namespace Nhom6_QL_DiemTHPT.GUI
 
         }
 
+        void loadCboTinhTrang()
+        {
+            string[] tinhTrangs = { "Tất cả","Lên lớp", "Lưu ban", "Mới" };
 
+            cbo_DanhSachHocSinhTT.DataSource = tinhTrangs;
+        }
+        void loadCboLop()
+        {
+            List<LopDTO> lopList = lopDAO.GetLop();
+
+            cbo_Lop.DisplayMember = "TENLOP";
+            cbo_Lop.ValueMember = "MALOP";
+            cbo_Lop.DataSource = lopList;
+        }
+        void loadDGV_HocSinh()
+        {
+            DataTable data = hocSinh_LopDAO.GetHSDaCoLop();
+            dgv_DanhSachHocSinh.DataSource = data;
+        }
         private void XepLop_Load(object sender, EventArgs e)
         {
-
+            loadCboLop();
+            loadCboTinhTrang();
+            loadDGV_HocSinh();
         }
     }
 }

@@ -35,23 +35,23 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.txt_TenHocSinh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv_DanhSachHocSinh = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbo_DanhSachHocSinhTT = new System.Windows.Forms.ComboBox();
+            this.btn_XepLopTheoDieuKien = new System.Windows.Forms.Button();
+            this.btn_XepLopLuuBan = new System.Windows.Forms.Button();
+            this.btn_ThemDanhSachHocSinh = new System.Windows.Forms.Button();
+            this.cbo_TinhTrang = new System.Windows.Forms.ComboBox();
+            this.cbo_Lop = new System.Windows.Forms.ComboBox();
+            this.btn_XepLopHocSinhCu = new System.Windows.Forms.Button();
+            this.btn_XepLopHocSinhMoi = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_NamHoc = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btn_XepLopHocSinhMoi = new System.Windows.Forms.Button();
-            this.btn_XepLopHocSinhCu = new System.Windows.Forms.Button();
-            this.cbo_Lop = new System.Windows.Forms.ComboBox();
-            this.cbo_TinhTrang = new System.Windows.Forms.ComboBox();
-            this.btn_ThemDanhSachHocSinh = new System.Windows.Forms.Button();
-            this.btn_XepLopLuuBan = new System.Windows.Forms.Button();
-            this.btn_XepLopTheoDieuKien = new System.Windows.Forms.Button();
-            this.dgv_DanhSachHocSinh = new System.Windows.Forms.DataGridView();
-            this.cbo_DanhSachHocSinh = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DanhSachHocSinh)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_MaHocSinh
@@ -109,11 +109,21 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.groupBox1.Text = "Danh sách học sinh";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // dgv_DanhSachHocSinh
+            // 
+            this.dgv_DanhSachHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DanhSachHocSinh.Location = new System.Drawing.Point(15, 37);
+            this.dgv_DanhSachHocSinh.Name = "dgv_DanhSachHocSinh";
+            this.dgv_DanhSachHocSinh.RowHeadersWidth = 51;
+            this.dgv_DanhSachHocSinh.RowTemplate.Height = 24;
+            this.dgv_DanhSachHocSinh.Size = new System.Drawing.Size(1100, 309);
+            this.dgv_DanhSachHocSinh.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.cbo_DanhSachHocSinh);
+            this.groupBox2.Controls.Add(this.cbo_DanhSachHocSinhTT);
             this.groupBox2.Controls.Add(this.btn_XepLopTheoDieuKien);
             this.groupBox2.Controls.Add(this.btn_XepLopLuuBan);
             this.groupBox2.Controls.Add(this.btn_ThemDanhSachHocSinh);
@@ -137,6 +147,97 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.groupBox2.Text = "Thông tin học sinh";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(749, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 17);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Danh Sách (Tình trạng)";
+            // 
+            // cbo_DanhSachHocSinhTT
+            // 
+            this.cbo_DanhSachHocSinhTT.FormattingEnabled = true;
+            this.cbo_DanhSachHocSinhTT.Location = new System.Drawing.Point(912, 69);
+            this.cbo_DanhSachHocSinhTT.Name = "cbo_DanhSachHocSinhTT";
+            this.cbo_DanhSachHocSinhTT.Size = new System.Drawing.Size(186, 24);
+            this.cbo_DanhSachHocSinhTT.TabIndex = 17;
+            // 
+            // btn_XepLopTheoDieuKien
+            // 
+            this.btn_XepLopTheoDieuKien.Location = new System.Drawing.Point(926, 129);
+            this.btn_XepLopTheoDieuKien.Name = "btn_XepLopTheoDieuKien";
+            this.btn_XepLopTheoDieuKien.Size = new System.Drawing.Size(114, 63);
+            this.btn_XepLopTheoDieuKien.TabIndex = 16;
+            this.btn_XepLopTheoDieuKien.Text = "Xếp lớp học sinh theo điều kiện";
+            this.btn_XepLopTheoDieuKien.UseVisualStyleBackColor = true;
+            // 
+            // btn_XepLopLuuBan
+            // 
+            this.btn_XepLopLuuBan.Location = new System.Drawing.Point(714, 129);
+            this.btn_XepLopLuuBan.Name = "btn_XepLopLuuBan";
+            this.btn_XepLopLuuBan.Size = new System.Drawing.Size(114, 63);
+            this.btn_XepLopLuuBan.TabIndex = 15;
+            this.btn_XepLopLuuBan.Text = "Xếp lớp học sinh lưu ban";
+            this.btn_XepLopLuuBan.UseVisualStyleBackColor = true;
+            // 
+            // btn_ThemDanhSachHocSinh
+            // 
+            this.btn_ThemDanhSachHocSinh.AutoSize = true;
+            this.btn_ThemDanhSachHocSinh.Location = new System.Drawing.Point(36, 131);
+            this.btn_ThemDanhSachHocSinh.Name = "btn_ThemDanhSachHocSinh";
+            this.btn_ThemDanhSachHocSinh.Size = new System.Drawing.Size(181, 63);
+            this.btn_ThemDanhSachHocSinh.TabIndex = 14;
+            this.btn_ThemDanhSachHocSinh.Text = "Thêm danh sách học sinh";
+            this.btn_ThemDanhSachHocSinh.UseVisualStyleBackColor = true;
+            // 
+            // cbo_TinhTrang
+            // 
+            this.cbo_TinhTrang.Enabled = false;
+            this.cbo_TinhTrang.FormattingEnabled = true;
+            this.cbo_TinhTrang.Location = new System.Drawing.Point(483, 66);
+            this.cbo_TinhTrang.Name = "cbo_TinhTrang";
+            this.cbo_TinhTrang.Size = new System.Drawing.Size(186, 24);
+            this.cbo_TinhTrang.TabIndex = 13;
+            // 
+            // cbo_Lop
+            // 
+            this.cbo_Lop.Enabled = false;
+            this.cbo_Lop.FormattingEnabled = true;
+            this.cbo_Lop.Location = new System.Drawing.Point(844, 13);
+            this.cbo_Lop.Name = "cbo_Lop";
+            this.cbo_Lop.Size = new System.Drawing.Size(141, 24);
+            this.cbo_Lop.TabIndex = 12;
+            // 
+            // btn_XepLopHocSinhCu
+            // 
+            this.btn_XepLopHocSinhCu.Location = new System.Drawing.Point(504, 129);
+            this.btn_XepLopHocSinhCu.Name = "btn_XepLopHocSinhCu";
+            this.btn_XepLopHocSinhCu.Size = new System.Drawing.Size(114, 63);
+            this.btn_XepLopHocSinhCu.TabIndex = 11;
+            this.btn_XepLopHocSinhCu.Text = "Xếp lớp học sinh cũ";
+            this.btn_XepLopHocSinhCu.UseVisualStyleBackColor = true;
+            // 
+            // btn_XepLopHocSinhMoi
+            // 
+            this.btn_XepLopHocSinhMoi.AutoSize = true;
+            this.btn_XepLopHocSinhMoi.Location = new System.Drawing.Point(275, 129);
+            this.btn_XepLopHocSinhMoi.Name = "btn_XepLopHocSinhMoi";
+            this.btn_XepLopHocSinhMoi.Size = new System.Drawing.Size(149, 63);
+            this.btn_XepLopHocSinhMoi.TabIndex = 10;
+            this.btn_XepLopHocSinhMoi.Text = "Xếp lớp học sinh mới";
+            this.btn_XepLopHocSinhMoi.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(351, 69);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Tình trạng";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -154,107 +255,6 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.txt_NamHoc.Size = new System.Drawing.Size(186, 22);
             this.txt_NamHoc.TabIndex = 6;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(351, 69);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tình trạng";
-            // 
-            // btn_XepLopHocSinhMoi
-            // 
-            this.btn_XepLopHocSinhMoi.AutoSize = true;
-            this.btn_XepLopHocSinhMoi.Location = new System.Drawing.Point(275, 129);
-            this.btn_XepLopHocSinhMoi.Name = "btn_XepLopHocSinhMoi";
-            this.btn_XepLopHocSinhMoi.Size = new System.Drawing.Size(149, 63);
-            this.btn_XepLopHocSinhMoi.TabIndex = 10;
-            this.btn_XepLopHocSinhMoi.Text = "Xếp lớp học sinh mới";
-            this.btn_XepLopHocSinhMoi.UseVisualStyleBackColor = true;
-            // 
-            // btn_XepLopHocSinhCu
-            // 
-            this.btn_XepLopHocSinhCu.Location = new System.Drawing.Point(504, 129);
-            this.btn_XepLopHocSinhCu.Name = "btn_XepLopHocSinhCu";
-            this.btn_XepLopHocSinhCu.Size = new System.Drawing.Size(114, 63);
-            this.btn_XepLopHocSinhCu.TabIndex = 11;
-            this.btn_XepLopHocSinhCu.Text = "Xếp lớp học sinh cũ";
-            this.btn_XepLopHocSinhCu.UseVisualStyleBackColor = true;
-            // 
-            // cbo_Lop
-            // 
-            this.cbo_Lop.Enabled = false;
-            this.cbo_Lop.FormattingEnabled = true;
-            this.cbo_Lop.Location = new System.Drawing.Point(844, 13);
-            this.cbo_Lop.Name = "cbo_Lop";
-            this.cbo_Lop.Size = new System.Drawing.Size(141, 24);
-            this.cbo_Lop.TabIndex = 12;
-            // 
-            // cbo_TinhTrang
-            // 
-            this.cbo_TinhTrang.Enabled = false;
-            this.cbo_TinhTrang.FormattingEnabled = true;
-            this.cbo_TinhTrang.Location = new System.Drawing.Point(483, 66);
-            this.cbo_TinhTrang.Name = "cbo_TinhTrang";
-            this.cbo_TinhTrang.Size = new System.Drawing.Size(186, 24);
-            this.cbo_TinhTrang.TabIndex = 13;
-            // 
-            // btn_ThemDanhSachHocSinh
-            // 
-            this.btn_ThemDanhSachHocSinh.AutoSize = true;
-            this.btn_ThemDanhSachHocSinh.Location = new System.Drawing.Point(36, 131);
-            this.btn_ThemDanhSachHocSinh.Name = "btn_ThemDanhSachHocSinh";
-            this.btn_ThemDanhSachHocSinh.Size = new System.Drawing.Size(181, 63);
-            this.btn_ThemDanhSachHocSinh.TabIndex = 14;
-            this.btn_ThemDanhSachHocSinh.Text = "Thêm danh sách học sinh";
-            this.btn_ThemDanhSachHocSinh.UseVisualStyleBackColor = true;
-            // 
-            // btn_XepLopLuuBan
-            // 
-            this.btn_XepLopLuuBan.Location = new System.Drawing.Point(714, 129);
-            this.btn_XepLopLuuBan.Name = "btn_XepLopLuuBan";
-            this.btn_XepLopLuuBan.Size = new System.Drawing.Size(114, 63);
-            this.btn_XepLopLuuBan.TabIndex = 15;
-            this.btn_XepLopLuuBan.Text = "Xếp lớp học sinh lưu ban";
-            this.btn_XepLopLuuBan.UseVisualStyleBackColor = true;
-            // 
-            // btn_XepLopTheoDieuKien
-            // 
-            this.btn_XepLopTheoDieuKien.Location = new System.Drawing.Point(926, 129);
-            this.btn_XepLopTheoDieuKien.Name = "btn_XepLopTheoDieuKien";
-            this.btn_XepLopTheoDieuKien.Size = new System.Drawing.Size(114, 63);
-            this.btn_XepLopTheoDieuKien.TabIndex = 16;
-            this.btn_XepLopTheoDieuKien.Text = "Xếp lớp học sinh theo điều kiện";
-            this.btn_XepLopTheoDieuKien.UseVisualStyleBackColor = true;
-            // 
-            // dgv_DanhSachHocSinh
-            // 
-            this.dgv_DanhSachHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_DanhSachHocSinh.Location = new System.Drawing.Point(15, 37);
-            this.dgv_DanhSachHocSinh.Name = "dgv_DanhSachHocSinh";
-            this.dgv_DanhSachHocSinh.RowHeadersWidth = 51;
-            this.dgv_DanhSachHocSinh.RowTemplate.Height = 24;
-            this.dgv_DanhSachHocSinh.Size = new System.Drawing.Size(1100, 309);
-            this.dgv_DanhSachHocSinh.TabIndex = 0;
-            // 
-            // cbo_DanhSachHocSinh
-            // 
-            this.cbo_DanhSachHocSinh.FormattingEnabled = true;
-            this.cbo_DanhSachHocSinh.Location = new System.Drawing.Point(912, 69);
-            this.cbo_DanhSachHocSinh.Name = "cbo_DanhSachHocSinh";
-            this.cbo_DanhSachHocSinh.Size = new System.Drawing.Size(186, 24);
-            this.cbo_DanhSachHocSinh.TabIndex = 17;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(749, 69);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 17);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Danh Sách (Tình trạng)";
-            // 
             // XepLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -267,9 +267,9 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.Text = "ThemHocSinh";
             this.Load += new System.EventHandler(this.XepLop_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DanhSachHocSinh)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DanhSachHocSinh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,6 +296,6 @@ namespace Nhom6_QL_DiemTHPT.GUI
         private System.Windows.Forms.Button btn_XepLopTheoDieuKien;
         private System.Windows.Forms.DataGridView dgv_DanhSachHocSinh;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbo_DanhSachHocSinh;
+        private System.Windows.Forms.ComboBox cbo_DanhSachHocSinhTT;
     }
 }
