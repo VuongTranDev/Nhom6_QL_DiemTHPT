@@ -16,5 +16,10 @@ namespace Nhom6_QL_DiemTHPT.DAO
         {
             return new SqlConnection(con);
         }
+        public static string getConStr()
+        {
+            return con;
+        }
+        
     }
 }

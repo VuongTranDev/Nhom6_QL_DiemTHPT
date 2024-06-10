@@ -49,6 +49,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_NamHoc = new System.Windows.Forms.TextBox();
+            this.btn_LuuDanhSach = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DanhSachHocSinh)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -191,6 +192,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.btn_ThemDanhSachHocSinh.TabIndex = 14;
             this.btn_ThemDanhSachHocSinh.Text = "Thêm danh sách học sinh";
             this.btn_ThemDanhSachHocSinh.UseVisualStyleBackColor = true;
+            this.btn_ThemDanhSachHocSinh.Click += new System.EventHandler(this.btn_ThemDanhSachHocSinh_Click);
             // 
             // cbo_TinhTrang
             // 
@@ -255,11 +257,23 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.txt_NamHoc.Size = new System.Drawing.Size(186, 22);
             this.txt_NamHoc.TabIndex = 6;
             // 
+            // btn_LuuDanhSach
+            // 
+            this.btn_LuuDanhSach.AutoSize = true;
+            this.btn_LuuDanhSach.Location = new System.Drawing.Point(585, 617);
+            this.btn_LuuDanhSach.Name = "btn_LuuDanhSach";
+            this.btn_LuuDanhSach.Size = new System.Drawing.Size(195, 63);
+            this.btn_LuuDanhSach.TabIndex = 19;
+            this.btn_LuuDanhSach.Text = "Lưu danh sách học sinh mới";
+            this.btn_LuuDanhSach.UseVisualStyleBackColor = true;
+            this.btn_LuuDanhSach.Click += new System.EventHandler(this.btn_LuuDanhSach_Click);
+            // 
             // XepLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1431, 636);
+            this.ClientSize = new System.Drawing.Size(1431, 703);
+            this.Controls.Add(this.btn_LuuDanhSach);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "XepLop";
@@ -297,5 +311,6 @@ namespace Nhom6_QL_DiemTHPT.GUI
         private System.Windows.Forms.DataGridView dgv_DanhSachHocSinh;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbo_DanhSachHocSinhTT;
+        private System.Windows.Forms.Button btn_LuuDanhSach;
     }
 }
