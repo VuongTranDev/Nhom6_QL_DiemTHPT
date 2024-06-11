@@ -12,68 +12,21 @@ namespace Nhom6_QL_DiemTHPT.DAO
 {
     public class HocBaDAO
     {
-        public List<HocBaDTO> GetHocBaByMaHS(string maHS)
-        {
-            List<HocBaDTO> hocBaList = new List<HocBaDTO>();
-
-            using (IDbConnection connection = DBConnection.GetConnection())
-            {
-                connection.Open();
-                string query = "SELECT * FROM HOCBA WHERE MAHS = @MaHS";
-                using (IDbCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = query;
-                    IDbDataParameter parameter = command.CreateParameter();
-                    parameter.ParameterName = "@MaHS";
-                    parameter.Value = maHS;
-                    command.Parameters.Add(parameter);
-
-                    using (IDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            HocBaDTO hocBa = new HocBaDTO
-                            {
-                                ID = Convert.ToInt32(reader["ID"]),
-                                MAHB = reader["MAHB"].ToString(),
-                                MAHS = reader["MAHS"].ToString(),
-                                XEPLOAI = reader["XEPLOAI"].ToString(),
-                                HANHKIEM = reader["HANHKIEM"].ToString()
-                            };
-                            hocBaList.Add(hocBa);
-                        }
-                    }
-                }
-            }
-
-            return hocBaList;
-        }
-
         public List<HocBaDTO> GetAllHocBa()
         {
-                string query = "SELECT MAHB, MAHS, XEPLOAI, HANHKIEM, DIEMHK1, DIEMHK2, DIEMTONG FROM HOCBA";
-
-                using (IDbConnection connection = DBConnection.GetConnection())
-                {
-                    connection.Open();
-                    return connection.Query<HocBaDTO>(query).ToList();
-                }
+            using (IDbConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                return connection.Query<HocBaDTO>("GetAllHocBa", commandType: CommandType.StoredProcedure).ToList();
+            }
         }
 
-        public void AddHocBa(HocBaDTO hocBa)
+        public List<HocBaDTO> GetHocBaByLop(string malop)
         {
             using (IDbConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
-                string query = "INSERT INTO HOCBA (MAHS, XEPLOAI, HANHKIEM) VALUES (@MaHS, @XepLoai, @HanhKiem)";
-                using (IDbCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = query;
-                    command.Parameters.Add(new SqlParameter("@MaHS", hocBa.MAHS));
-                    command.Parameters.Add(new SqlParameter("@XepLoai", hocBa.XEPLOAI));
-                    command.Parameters.Add(new SqlParameter("@HanhKiem", hocBa.HANHKIEM));
-                    command.ExecuteNonQuery();
-                }
+                return connection.Query<HocBaDTO>("GetHocBaByLop", new { MALOP = malop }, commandType: CommandType.StoredProcedure).ToList();
             }
         }
 
@@ -114,19 +67,11 @@ namespace Nhom6_QL_DiemTHPT.DAO
 
         public string GetLastMaHB()
         {
-            try
+            using (IDbConnection connection = DBConnection.GetConnection())
             {
-                using (IDbConnection connection = DBConnection.GetConnection())
-                {
-                    connection.Open();
-                    string lastMaHB = connection.QueryFirstOrDefault<string>("SELECT TOP 1 MAHB FROM HOCBA ORDER BY MAHB DESC");
-                    return lastMaHB;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi khi lấy mã học bạ cuối cùng: " + ex.Message);
-                return null;
+                connection.Open();
+                string lastMaHB = connection.QueryFirstOrDefault<string>("GetLastMaHB", commandType: CommandType.StoredProcedure);
+                return lastMaHB;
             }
         }
 

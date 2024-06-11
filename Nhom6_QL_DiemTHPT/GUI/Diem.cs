@@ -14,6 +14,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
         private readonly DiemDAO diemDAO;
         private readonly HocKyDAO hocKyDAO;
         private readonly LopDAO lopDAO;
+        private readonly GiaoVienDAO giaoVienDAO = new GiaoVienDAO();
         private string currentMaHS;
 
         public Diem()
@@ -164,39 +165,101 @@ namespace Nhom6_QL_DiemTHPT.GUI
 
         private void btnUpdateDiem_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            string maGiaoVien = Prompt.ShowDialog("Nhập mã giáo viên để sửa điểm:", "Xác nhận mã giáo viên");
+
+            if (dataGridView1.CurrentRow != null)
             {
-                string maHS = lb_MaHS.Text;
-                string maMH = txtMAMH.Text;
-                string maHK = row.Cells["MAHK"].Value.ToString();
-                float? diemHS1 = string.IsNullOrEmpty(txtDiemHS1.Text) ? (float?)null : Convert.ToSingle(txtDiemHS1.Text);
-                float? diemHS2 = string.IsNullOrEmpty(txtDiemHS2.Text) ? (float?)null : Convert.ToSingle(txtDiemHS2.Text);
-                float? diemThi = string.IsNullOrEmpty(txtDiemThi.Text) ? (float?)null : Convert.ToSingle(txtDiemThi.Text);
-                diemDAO.UpdateDiem(maHS, maMH, maHK, diemHS1, diemHS2, diemThi);
+                string maMonHoc = dataGridView1.CurrentRow.Cells["MAMH"].Value.ToString();
+
+                if (!IsValidGiaoVien(maGiaoVien, maMonHoc))
+                {
+                    MessageBox.Show("Mã giáo viên không hợp lệ hoặc không có quyền sửa điểm môn học này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    try
+                    {
+                        string maHS = lb_MaHS.Text;
+                        string maMH = maMonHoc;
+                        string maHK = row.Cells["MAHK"].Value.ToString();
+                        float? diemHS1 = string.IsNullOrEmpty(txtDiemHS1.Text) ? (float?)null : Convert.ToSingle(txtDiemHS1.Text);
+                        float? diemHS2 = string.IsNullOrEmpty(txtDiemHS2.Text) ? (float?)null : Convert.ToSingle(txtDiemHS2.Text);
+                        float? diemThi = string.IsNullOrEmpty(txtDiemThi.Text) ? (float?)null : Convert.ToSingle(txtDiemThi.Text);
+
+                        diemDAO.UpdateDiem(maHS, maMH, maHK, diemHS1, diemHS2, diemThi);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Lỗi khi cập nhật điểm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                HienThiBangDiem(lb_MaHS.Text, ((HocKyDTO)cboHK.SelectedItem).MAHK);
+                MessageBox.Show("Đã cập nhật điểm thành công!");
             }
-            HienThiBangDiem(lb_MaHS.Text, ((HocKyDTO)cboHK.SelectedItem).MAHK);
-            MessageBox.Show("Đã cập nhật điểm thành công!");
-        }
-
-
-        private void btnUpdateDiemTB_Click(object sender, EventArgs e)
-        {
-            diemDAO.TinhDiemTB(currentMaHS);
-            HienThiBangDiem(currentMaHS, cboHK.SelectedValue.ToString());
+            else
+            {
+                MessageBox.Show("Không có dòng nào được chọn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cboLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboLop.SelectedIndex != -1) 
+            if (cboLop.SelectedIndex != -1)
             {
-                string maLop = cboLop.SelectedValue.ToString(); 
-                List<HocSinhDTO> hocSinhTheoLop = hocSinhDAO.GetHocSinhByMaLop(maLop); 
-                HienThiHocSinh(hocSinhTheoLop); 
+                string maLop = cboLop.SelectedValue.ToString();
+                List<HocSinhDTO> hocSinhTheoLop = hocSinhDAO.GetHocSinhByMaLop(maLop);
+                HienThiHocSinh(hocSinhTheoLop);
             }
             else
             {
                 HienThiHocSinh(hocSinhDAO.GetAllHocSinh());
             }
+        }
+
+        private bool IsValidGiaoVien(string maGiaoVien, string maMonHoc)
+        {
+            GiaoVienDTO giaoVien = giaoVienDAO.GetGiaoVien(maGiaoVien);
+
+            if (giaoVien == null)
+            {
+                return false;
+            }
+
+            List<string> dsMonHocPhuTrach = giaoVienDAO.GetDanhSachMonHocPhuTrach(maGiaoVien);
+
+            return dsMonHocPhuTrach.Contains(maMonHoc);
+        }
+
+        private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+
+        }
+    }
+
+    public static class Prompt
+    {
+        public static string ShowDialog(string text, string caption)
+        {
+            Form prompt = new Form()
+            {
+                Width = 500,
+                Height = 150,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Text = caption,
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            Label textLabel = new Label() { Left = 50, Top = 20, Text = text };
+            TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 400 };
+            Button confirmation = new Button() { Text = "Ok", Left = 350, Width = 100, Top = 70, DialogResult = DialogResult.OK };
+            confirmation.Click += (sender, e) => { prompt.Close(); };
+            prompt.Controls.Add(textBox);
+            prompt.Controls.Add(confirmation);
+            prompt.Controls.Add(textLabel);
+            prompt.AcceptButton = confirmation;
+
+            return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
         }
     }
 }

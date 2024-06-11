@@ -43,23 +43,22 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.cboHK = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUpdateDiem = new System.Windows.Forms.Button();
+            this.txtTenMH = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtDiemThi = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDiemHS2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDiemHS1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMAMH = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.lb_TenHS = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lb_MaHS = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtMAMH = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDiemHS1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDiemHS2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDiemThi = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtTenMH = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnUpdateDiem = new System.Windows.Forms.Button();
-            this.btnUpdateDiemTB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,6 +105,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(741, 325);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // MAMH
@@ -192,6 +192,109 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.groupBox1.Text = "Thông tin học sinh";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnUpdateDiem);
+            this.groupBox2.Location = new System.Drawing.Point(303, 89);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(190, 80);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Chức năng";
+            // 
+            // btnUpdateDiem
+            // 
+            this.btnUpdateDiem.Location = new System.Drawing.Point(26, 34);
+            this.btnUpdateDiem.Name = "btnUpdateDiem";
+            this.btnUpdateDiem.Size = new System.Drawing.Size(140, 23);
+            this.btnUpdateDiem.TabIndex = 0;
+            this.btnUpdateDiem.Text = "Cập nhật điểm";
+            this.btnUpdateDiem.UseVisualStyleBackColor = true;
+            this.btnUpdateDiem.Click += new System.EventHandler(this.btnUpdateDiem_Click);
+            // 
+            // txtTenMH
+            // 
+            this.txtTenMH.Enabled = false;
+            this.txtTenMH.Location = new System.Drawing.Point(116, 120);
+            this.txtTenMH.Name = "txtTenMH";
+            this.txtTenMH.Size = new System.Drawing.Size(134, 20);
+            this.txtTenMH.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(31, 123);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Tên môn học";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // txtDiemThi
+            // 
+            this.txtDiemThi.Location = new System.Drawing.Point(116, 221);
+            this.txtDiemThi.Name = "txtDiemThi";
+            this.txtDiemThi.Size = new System.Drawing.Size(134, 20);
+            this.txtDiemThi.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(31, 224);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Điểm thi";
+            // 
+            // txtDiemHS2
+            // 
+            this.txtDiemHS2.Location = new System.Drawing.Point(116, 185);
+            this.txtDiemHS2.Name = "txtDiemHS2";
+            this.txtDiemHS2.Size = new System.Drawing.Size(134, 20);
+            this.txtDiemHS2.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 188);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Điểm hs 2";
+            // 
+            // txtDiemHS1
+            // 
+            this.txtDiemHS1.Location = new System.Drawing.Point(116, 149);
+            this.txtDiemHS1.Name = "txtDiemHS1";
+            this.txtDiemHS1.Size = new System.Drawing.Size(134, 20);
+            this.txtDiemHS1.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(31, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Điểm hs 1";
+            // 
+            // txtMAMH
+            // 
+            this.txtMAMH.Enabled = false;
+            this.txtMAMH.Location = new System.Drawing.Point(116, 89);
+            this.txtMAMH.Name = "txtMAMH";
+            this.txtMAMH.Size = new System.Drawing.Size(134, 20);
+            this.txtMAMH.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Mã môn học";
+            // 
             // lb_TenHS
             // 
             this.lb_TenHS.AutoSize = true;
@@ -227,120 +330,6 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 2;
             this.label6.Text = "Mã học sinh";
-            // 
-            // txtMAMH
-            // 
-            this.txtMAMH.Enabled = false;
-            this.txtMAMH.Location = new System.Drawing.Point(116, 89);
-            this.txtMAMH.Name = "txtMAMH";
-            this.txtMAMH.Size = new System.Drawing.Size(134, 20);
-            this.txtMAMH.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Mã môn học";
-            // 
-            // txtDiemHS1
-            // 
-            this.txtDiemHS1.Location = new System.Drawing.Point(116, 149);
-            this.txtDiemHS1.Name = "txtDiemHS1";
-            this.txtDiemHS1.Size = new System.Drawing.Size(134, 20);
-            this.txtDiemHS1.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Điểm hs 1";
-            // 
-            // txtDiemHS2
-            // 
-            this.txtDiemHS2.Location = new System.Drawing.Point(116, 185);
-            this.txtDiemHS2.Name = "txtDiemHS2";
-            this.txtDiemHS2.Size = new System.Drawing.Size(134, 20);
-            this.txtDiemHS2.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 188);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Điểm hs 2";
-            // 
-            // txtDiemThi
-            // 
-            this.txtDiemThi.Location = new System.Drawing.Point(116, 221);
-            this.txtDiemThi.Name = "txtDiemThi";
-            this.txtDiemThi.Size = new System.Drawing.Size(134, 20);
-            this.txtDiemThi.TabIndex = 15;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 224);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Điểm thi";
-            // 
-            // txtTenMH
-            // 
-            this.txtTenMH.Enabled = false;
-            this.txtTenMH.Location = new System.Drawing.Point(116, 120);
-            this.txtTenMH.Name = "txtTenMH";
-            this.txtTenMH.Size = new System.Drawing.Size(134, 20);
-            this.txtTenMH.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(31, 123);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Tên môn học";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnUpdateDiemTB);
-            this.groupBox2.Controls.Add(this.btnUpdateDiem);
-            this.groupBox2.Location = new System.Drawing.Point(303, 89);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(190, 152);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Chức năng";
-            // 
-            // btnUpdateDiem
-            // 
-            this.btnUpdateDiem.Location = new System.Drawing.Point(26, 34);
-            this.btnUpdateDiem.Name = "btnUpdateDiem";
-            this.btnUpdateDiem.Size = new System.Drawing.Size(140, 23);
-            this.btnUpdateDiem.TabIndex = 0;
-            this.btnUpdateDiem.Text = "Cập nhật điểm";
-            this.btnUpdateDiem.UseVisualStyleBackColor = true;
-            this.btnUpdateDiem.Click += new System.EventHandler(this.btnUpdateDiem_Click);
-            // 
-            // btnUpdateDiemTB
-            // 
-            this.btnUpdateDiemTB.Location = new System.Drawing.Point(25, 65);
-            this.btnUpdateDiemTB.Name = "btnUpdateDiemTB";
-            this.btnUpdateDiemTB.Size = new System.Drawing.Size(140, 23);
-            this.btnUpdateDiemTB.TabIndex = 1;
-            this.btnUpdateDiemTB.Text = "Tính điểm TB";
-            this.btnUpdateDiemTB.UseVisualStyleBackColor = true;
-            this.btnUpdateDiemTB.Click += new System.EventHandler(this.btnUpdateDiemTB_Click);
             // 
             // Diem
             // 
@@ -397,7 +386,6 @@ namespace Nhom6_QL_DiemTHPT.GUI
         private System.Windows.Forms.TextBox txtTenMH;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnUpdateDiemTB;
         private System.Windows.Forms.Button btnUpdateDiem;
     }
 }

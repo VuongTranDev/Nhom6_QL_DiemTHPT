@@ -32,6 +32,8 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cboMaHS = new System.Windows.Forms.ComboBox();
+            this.btnTaoMaHB = new System.Windows.Forms.Button();
             this.cboHanhKiem = new System.Windows.Forms.ComboBox();
             this.cboXepLoai = new System.Windows.Forms.ComboBox();
             this.txtDiemTong = new System.Windows.Forms.TextBox();
@@ -50,6 +52,8 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.btnTinhDiemTong = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbo_Lop = new System.Windows.Forms.ComboBox();
             this.MAHB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIEMHK1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,8 +61,6 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.DIEMTONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.XEPLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HANHKIEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTaoMaHB = new System.Windows.Forms.Button();
-            this.cboMaHS = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -67,10 +69,12 @@ namespace Nhom6_QL_DiemTHPT.GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbo_Lop);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(61, 254);
+            this.groupBox1.Location = new System.Drawing.Point(40, 254);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(766, 291);
+            this.groupBox1.Size = new System.Drawing.Size(815, 328);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học bạ của học sinh";
@@ -86,9 +90,9 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.DIEMTONG,
             this.XEPLOAI,
             this.HANHKIEM});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 69);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(723, 233);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 233);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -115,6 +119,24 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin";
+            // 
+            // cboMaHS
+            // 
+            this.cboMaHS.FormattingEnabled = true;
+            this.cboMaHS.Location = new System.Drawing.Point(82, 56);
+            this.cboMaHS.Name = "cboMaHS";
+            this.cboMaHS.Size = new System.Drawing.Size(166, 21);
+            this.cboMaHS.TabIndex = 19;
+            // 
+            // btnTaoMaHB
+            // 
+            this.btnTaoMaHB.Location = new System.Drawing.Point(302, 135);
+            this.btnTaoMaHB.Name = "btnTaoMaHB";
+            this.btnTaoMaHB.Size = new System.Drawing.Size(75, 23);
+            this.btnTaoMaHB.TabIndex = 18;
+            this.btnTaoMaHB.Text = "Tạo MAHB";
+            this.btnTaoMaHB.UseVisualStyleBackColor = true;
+            this.btnTaoMaHB.Click += new System.EventHandler(this.btnTaoMaHB_Click);
             // 
             // cboHanhKiem
             // 
@@ -278,6 +300,23 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Chọn lớp";
+            // 
+            // cbo_Lop
+            // 
+            this.cbo_Lop.FormattingEnabled = true;
+            this.cbo_Lop.Location = new System.Drawing.Point(89, 31);
+            this.cbo_Lop.Name = "cbo_Lop";
+            this.cbo_Lop.Size = new System.Drawing.Size(121, 21);
+            this.cbo_Lop.TabIndex = 2;
+            // 
             // MAHB
             // 
             this.MAHB.DataPropertyName = "MAHB";
@@ -321,29 +360,11 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.HANHKIEM.HeaderText = "Hạnh kiểm";
             this.HANHKIEM.Name = "HANHKIEM";
             // 
-            // btnTaoMaHB
-            // 
-            this.btnTaoMaHB.Location = new System.Drawing.Point(302, 135);
-            this.btnTaoMaHB.Name = "btnTaoMaHB";
-            this.btnTaoMaHB.Size = new System.Drawing.Size(75, 23);
-            this.btnTaoMaHB.TabIndex = 18;
-            this.btnTaoMaHB.Text = "Tạo MAHB";
-            this.btnTaoMaHB.UseVisualStyleBackColor = true;
-            this.btnTaoMaHB.Click += new System.EventHandler(this.btnTaoMaHB_Click);
-            // 
-            // cboMaHS
-            // 
-            this.cboMaHS.FormattingEnabled = true;
-            this.cboMaHS.Location = new System.Drawing.Point(82, 56);
-            this.cboMaHS.Name = "cboMaHS";
-            this.cboMaHS.Size = new System.Drawing.Size(166, 21);
-            this.cboMaHS.TabIndex = 19;
-            // 
             // HocBa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 566);
+            this.ClientSize = new System.Drawing.Size(887, 613);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -351,6 +372,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.Text = "HocBa";
             this.Load += new System.EventHandler(this.HocBa_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -382,6 +404,10 @@ namespace Nhom6_QL_DiemTHPT.GUI
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboHanhKiem;
         private System.Windows.Forms.ComboBox cboXepLoai;
+        private System.Windows.Forms.Button btnTaoMaHB;
+        private System.Windows.Forms.ComboBox cboMaHS;
+        private System.Windows.Forms.ComboBox cbo_Lop;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHB;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAHS;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIEMHK1;
@@ -389,7 +415,5 @@ namespace Nhom6_QL_DiemTHPT.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn DIEMTONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn XEPLOAI;
         private System.Windows.Forms.DataGridViewTextBoxColumn HANHKIEM;
-        private System.Windows.Forms.Button btnTaoMaHB;
-        private System.Windows.Forms.ComboBox cboMaHS;
     }
 }

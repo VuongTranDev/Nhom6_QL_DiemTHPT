@@ -37,12 +37,7 @@ namespace Nhom6_QL_DiemTHPT.DAO
             using (IDbConnection dbConnection = DBConnection.GetConnection())
             {
                 dbConnection.Open();
-                string query = @"
-            SELECT HS.* 
-            FROM HOCSINH AS HS
-            INNER JOIN HOCSINH_LOP AS HS_Lop ON HS.MAHS = HS_Lop.MAHS
-            WHERE HS_Lop.MALOP = @MaLop";
-                return dbConnection.Query<HocSinhDTO>(query, new { MaLop = maLop }).AsList();
+                return dbConnection.Query<HocSinhDTO>("GetHocSinhByMaLop", new { MaLop = maLop }, commandType: CommandType.StoredProcedure).AsList();
             }
         }
     }
