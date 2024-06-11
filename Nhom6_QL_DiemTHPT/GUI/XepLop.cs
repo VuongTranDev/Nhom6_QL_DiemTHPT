@@ -111,5 +111,10 @@ namespace Nhom6_QL_DiemTHPT.GUI
                 MessageBox.Show("Không có dữ liệu để lưu.");
             }
         }
+
+        private void btn_XepLopHocSinhMoi_Click(object sender, EventArgs e)
+        {
+            hocSinh_LopDAO.xepLopHocSinhMoi();
+        }
     }
 }

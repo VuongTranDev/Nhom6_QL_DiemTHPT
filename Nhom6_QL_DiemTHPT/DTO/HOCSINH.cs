@@ -1,4 +1,4 @@
-namespace Nhom6_QL_DiemTHPT.ASD
+namespace Nhom6_QL_DiemTHPT.DTO
 {
     using System;
     using System.Collections.Generic;
