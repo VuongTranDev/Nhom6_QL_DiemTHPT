@@ -12,10 +12,11 @@ namespace Nhom6_QL_DiemTHPT
 {
     public partial class HomeForm : Form
     {
-        public HomeForm()
+        public HomeForm(string tenDangNhap)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            tenTk.Text = tenDangNhap;
         }
 
         Form currentFormChild;

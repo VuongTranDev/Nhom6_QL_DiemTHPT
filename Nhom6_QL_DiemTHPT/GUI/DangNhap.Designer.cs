@@ -53,6 +53,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(183, 20);
             this.txtTenDangNhap.TabIndex = 1;
+            this.txtTenDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenDangNhap_KeyDown);
             // 
             // txtMatKhau
             // 
@@ -60,6 +61,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(183, 20);
             this.txtMatKhau.TabIndex = 2;
+            this.txtMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatKhau_KeyDown);
             // 
             // label2
             // 

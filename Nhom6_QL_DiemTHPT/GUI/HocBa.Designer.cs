@@ -30,7 +30,16 @@ namespace Nhom6_QL_DiemTHPT.GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbo_Lop = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MAHB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIEMHK1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIEMHK2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIEMTONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.XEPLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HANHKIEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cboMaHS = new System.Windows.Forms.ComboBox();
             this.btnTaoMaHB = new System.Windows.Forms.Button();
@@ -50,17 +59,8 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnTinhXepLoai = new System.Windows.Forms.Button();
             this.btnTinhDiemTong = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbo_Lop = new System.Windows.Forms.ComboBox();
-            this.MAHB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAHS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIEMHK1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIEMHK2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIEMTONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.XEPLOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HANHKIEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -79,6 +79,23 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học bạ của học sinh";
             // 
+            // cbo_Lop
+            // 
+            this.cbo_Lop.FormattingEnabled = true;
+            this.cbo_Lop.Location = new System.Drawing.Point(89, 31);
+            this.cbo_Lop.Name = "cbo_Lop";
+            this.cbo_Lop.Size = new System.Drawing.Size(121, 21);
+            this.cbo_Lop.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Chọn lớp";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -95,6 +112,49 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.dataGridView1.Size = new System.Drawing.Size(776, 233);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // MAHB
+            // 
+            this.MAHB.DataPropertyName = "MAHB";
+            this.MAHB.HeaderText = "Mã học bạ";
+            this.MAHB.Name = "MAHB";
+            // 
+            // MAHS
+            // 
+            this.MAHS.DataPropertyName = "MAHS";
+            this.MAHS.HeaderText = "Mã học sinh";
+            this.MAHS.Name = "MAHS";
+            // 
+            // DIEMHK1
+            // 
+            this.DIEMHK1.DataPropertyName = "DIEMHK1";
+            this.DIEMHK1.HeaderText = "Điểm hk 1";
+            this.DIEMHK1.Name = "DIEMHK1";
+            // 
+            // DIEMHK2
+            // 
+            this.DIEMHK2.DataPropertyName = "DIEMHK2";
+            this.DIEMHK2.HeaderText = "Điểm hk 2";
+            this.DIEMHK2.Name = "DIEMHK2";
+            // 
+            // DIEMTONG
+            // 
+            this.DIEMTONG.DataPropertyName = "DIEMTONG";
+            this.DIEMTONG.HeaderText = "Điểm tổng";
+            this.DIEMTONG.Name = "DIEMTONG";
+            this.DIEMTONG.Width = 133;
+            // 
+            // XEPLOAI
+            // 
+            this.XEPLOAI.DataPropertyName = "XEPLOAI";
+            this.XEPLOAI.HeaderText = "Xếp loại";
+            this.XEPLOAI.Name = "XEPLOAI";
+            // 
+            // HANHKIEM
+            // 
+            this.HANHKIEM.DataPropertyName = "HANHKIEM";
+            this.HANHKIEM.HeaderText = "Hạnh kiểm";
+            this.HANHKIEM.Name = "HANHKIEM";
             // 
             // groupBox2
             // 
@@ -253,8 +313,8 @@ namespace Nhom6_QL_DiemTHPT.GUI
             // 
             this.groupBox3.Controls.Add(this.btnTinhXepLoai);
             this.groupBox3.Controls.Add(this.btnTinhDiemTong);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnSua);
+            this.groupBox3.Controls.Add(this.btnThem);
             this.groupBox3.Location = new System.Drawing.Point(668, 23);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(135, 172);
@@ -282,83 +342,25 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.btnTinhDiemTong.UseVisualStyleBackColor = true;
             this.btnTinhDiemTong.Click += new System.EventHandler(this.btnTinhDiemTong_Click);
             // 
-            // button3
+            // btnSua
             // 
-            this.button3.Location = new System.Drawing.Point(27, 65);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSua.Location = new System.Drawing.Point(27, 65);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 2;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // button1
+            // btnThem
             // 
-            this.button1.Location = new System.Drawing.Point(27, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Chọn lớp";
-            // 
-            // cbo_Lop
-            // 
-            this.cbo_Lop.FormattingEnabled = true;
-            this.cbo_Lop.Location = new System.Drawing.Point(89, 31);
-            this.cbo_Lop.Name = "cbo_Lop";
-            this.cbo_Lop.Size = new System.Drawing.Size(121, 21);
-            this.cbo_Lop.TabIndex = 2;
-            // 
-            // MAHB
-            // 
-            this.MAHB.DataPropertyName = "MAHB";
-            this.MAHB.HeaderText = "Mã học bạ";
-            this.MAHB.Name = "MAHB";
-            // 
-            // MAHS
-            // 
-            this.MAHS.DataPropertyName = "MAHS";
-            this.MAHS.HeaderText = "Mã học sinh";
-            this.MAHS.Name = "MAHS";
-            // 
-            // DIEMHK1
-            // 
-            this.DIEMHK1.DataPropertyName = "DIEMHK1";
-            this.DIEMHK1.HeaderText = "Điểm hk 1";
-            this.DIEMHK1.Name = "DIEMHK1";
-            // 
-            // DIEMHK2
-            // 
-            this.DIEMHK2.DataPropertyName = "DIEMHK2";
-            this.DIEMHK2.HeaderText = "Điểm hk 2";
-            this.DIEMHK2.Name = "DIEMHK2";
-            // 
-            // DIEMTONG
-            // 
-            this.DIEMTONG.DataPropertyName = "DIEMTONG";
-            this.DIEMTONG.HeaderText = "Điểm tổng";
-            this.DIEMTONG.Name = "DIEMTONG";
-            this.DIEMTONG.Width = 133;
-            // 
-            // XEPLOAI
-            // 
-            this.XEPLOAI.DataPropertyName = "XEPLOAI";
-            this.XEPLOAI.HeaderText = "Xếp loại";
-            this.XEPLOAI.Name = "XEPLOAI";
-            // 
-            // HANHKIEM
-            // 
-            this.HANHKIEM.DataPropertyName = "HANHKIEM";
-            this.HANHKIEM.HeaderText = "Hạnh kiểm";
-            this.HANHKIEM.Name = "HANHKIEM";
+            this.btnThem.Location = new System.Drawing.Point(27, 36);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.TabIndex = 0;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // HocBa
             // 
@@ -392,8 +394,8 @@ namespace Nhom6_QL_DiemTHPT.GUI
         private System.Windows.Forms.TextBox txtMAHB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnTinhDiemTong;
         private System.Windows.Forms.Button btnTinhXepLoai;
         private System.Windows.Forms.TextBox txtDiemTong;

@@ -33,12 +33,14 @@ namespace Nhom6_QL_DiemTHPT
             this.lb_tenTK = new System.Windows.Forms.Label();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.tenTk = new System.Windows.Forms.Label();
             this.headerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.headerPanel.Controls.Add(this.tenTk);
             this.headerPanel.Controls.Add(this.lb_tenTK);
             this.headerPanel.Controls.Add(this.btnDangXuat);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -73,6 +75,14 @@ namespace Nhom6_QL_DiemTHPT
             this.mainPanel.Size = new System.Drawing.Size(882, 595);
             this.mainPanel.TabIndex = 4;
             // 
+            // tenTk
+            // 
+            this.tenTk.AutoSize = true;
+            this.tenTk.Location = new System.Drawing.Point(728, 27);
+            this.tenTk.Name = "tenTk";
+            this.tenTk.Size = new System.Drawing.Size(0, 13);
+            this.tenTk.TabIndex = 2;
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,6 +104,7 @@ namespace Nhom6_QL_DiemTHPT
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label lb_tenTK;
         private System.Windows.Forms.Button btnDangXuat;
+        private System.Windows.Forms.Label tenTk;
     }
 }
 

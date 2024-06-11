@@ -21,5 +21,15 @@ namespace Nhom6_QL_DiemTHPT.DAO
                 return connection.Query<LopDTO>(query).ToList();
             }
         }
+
+        public LopDTO GetGiaoVienChuNhiem(string magvcn)
+        {
+            using (IDbConnection connection = DBConnection.GetConnection())
+            {
+                string procedureName = "GetGiaoVienChurNhiem";
+                var parameters = new { MAGVCN = magvcn };
+                return connection.QueryFirstOrDefault<LopDTO>(procedureName, parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }

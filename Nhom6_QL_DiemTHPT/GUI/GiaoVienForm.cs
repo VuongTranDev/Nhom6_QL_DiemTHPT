@@ -12,10 +12,11 @@ namespace Nhom6_QL_DiemTHPT.GUI
 {
     public partial class GiaoVienForm : Form
     {
-        public GiaoVienForm()
+        public GiaoVienForm(string tenDangNhap)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            lb_TenTK.Text = tenDangNhap;
         }
 
         Form currentFormChild;
@@ -50,6 +51,11 @@ namespace Nhom6_QL_DiemTHPT.GUI
             GUI.DangNhap f = new GUI.DangNhap();
             f.Show();
             this.Hide();
+        }
+
+        private void GiaoVienForm_Load(object sender, EventArgs e)
+        {
+            OpenChildForm(new GUI.Diem());
         }
     }
 }

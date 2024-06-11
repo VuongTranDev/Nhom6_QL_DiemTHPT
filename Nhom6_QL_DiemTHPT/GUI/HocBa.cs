@@ -20,6 +20,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
         public HocBa()     
         {
             InitializeComponent();
+            dataGridView1.CellClick += dataGridView1_CellClick;
         }
         private void HocBa_Load(object sender, EventArgs e)
         {
@@ -28,6 +29,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
             loadCboHanhKiem();
             loadMaHS();
             loadCboLop();
+            loadDataGridView();
         }
 
         private void loadDataGridView(string malop = null)
@@ -49,6 +51,14 @@ namespace Nhom6_QL_DiemTHPT.GUI
 
         private void btnTinhDiemTong_Click(object sender, EventArgs e)
         {
+            string maGiaoVien = Prompt.ShowDialog("Nhập mã giáo viên để tính điểm tổng học bạ:", "Xác nhận mã giáo viên");
+
+            if (!IsValidGiaoVienChuNhiem(maGiaoVien))
+            {
+                MessageBox.Show("Mã giáo viên không hợp lệ hoặc không có quyền tính điểm học bạ học bạ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (hocBaDAO.TinhDiemTong())
             {
                 var malop = cbo_Lop.SelectedItem as LopDTO;
@@ -62,6 +72,14 @@ namespace Nhom6_QL_DiemTHPT.GUI
 
         private void btnTinhXepLoai_Click(object sender, EventArgs e)
         {
+            string maGiaoVien = Prompt.ShowDialog("Nhập mã giáo viên để xếp loại học bạ:", "Xác nhận mã giáo viên");
+
+            if (!IsValidGiaoVienChuNhiem(maGiaoVien))
+            {
+                MessageBox.Show("Mã giáo viên không hợp lệ hoặc không có quyền xếp loại học bạ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             hocBaDAO.TinhXepLoaiHanhKiem();
             var malop = cbo_Lop.SelectedItem as LopDTO;
             if (malop != null)
@@ -126,10 +144,26 @@ namespace Nhom6_QL_DiemTHPT.GUI
                 txtDiemTong.Text = row.Cells["DIEMTONG"].Value.ToString();
                 string mahs = row.Cells["MAHS"].Value.ToString();
                 cboMaHS.SelectedItem = mahs;
+
                 string xepLoai = row.Cells["XEPLOAI"].Value.ToString();
-                cboXepLoai.SelectedItem = xepLoai;
+                if (cboXepLoai.Items.Contains(xepLoai))
+                {
+                    cboXepLoai.SelectedItem = xepLoai;
+                }
+                else
+                {
+                    cboXepLoai.SelectedIndex = -1;
+                }
+
                 string hanhKiem = row.Cells["HANHKIEM"].Value.ToString();
-                cboHanhKiem.SelectedItem = hanhKiem;
+                if (cboHanhKiem.Items.Contains(hanhKiem))
+                {
+                    cboHanhKiem.SelectedItem = hanhKiem;
+                }
+                else
+                {
+                    cboHanhKiem.SelectedIndex = -1;
+                }
             }
         }
 
@@ -153,6 +187,126 @@ namespace Nhom6_QL_DiemTHPT.GUI
             {
                 MessageBox.Show("Lỗi khi tạo mã học bạ mới: " + ex.Message);
             }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string maGiaoVien = Prompt.ShowDialog("Nhập mã giáo viên để sửa học bạ:", "Xác nhận mã giáo viên");
+
+            if (!IsValidGiaoVienChuNhiem(maGiaoVien))
+            {
+                MessageBox.Show("Mã giáo viên không hợp lệ hoặc không có quyền sửa học bạ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                string maHB = txtMAHB.Text;
+                string hanhKiem = cboHanhKiem.SelectedItem?.ToString();
+                string xepLoai = cboXepLoai.SelectedItem?.ToString();
+
+                if (!string.IsNullOrEmpty(maHB) && !string.IsNullOrEmpty(hanhKiem) && !string.IsNullOrEmpty(xepLoai))
+                {
+                    hocBaDAO.updateHocBa(maHB, hanhKiem, xepLoai);
+
+                    MessageBox.Show("Cập nhật học bạ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    var selectedLop = cbo_Lop.SelectedItem as LopDTO;
+                    if (selectedLop != null)
+                    {
+                        loadDataGridView(selectedLop.MaLop);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin trước khi cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi cập nhật học bạ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            string maGiaoVien = Prompt.ShowDialog("Nhập mã giáo viên để thêm học bạ:", "Xác nhận mã giáo viên");
+
+            string maHB = txtMAHB.Text;
+            string maHS = cboMaHS.SelectedItem?.ToString();
+            if (!string.IsNullOrEmpty(maHB) && !string.IsNullOrEmpty(maHS))
+            {
+                if (!IsValidGiaoVienChuNhiem(maGiaoVien))
+                {
+                    MessageBox.Show("Mã giáo viên không hợp lệ hoặc không có quyền thêm học bạ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    hocBaDAO.insertHocBa(maHB, maHS, "Chưa xét", "Chưa xét", 0, 0, 0);
+                    MessageBox.Show("Thêm mới học bạ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var selectedLop = cbo_Lop.SelectedItem as LopDTO;
+                    if (selectedLop != null)
+                    {
+                        loadDataGridView(selectedLop.MaLop);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi thêm mới học bạ: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin trước khi thêm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private bool IsValidGiaoVienChuNhiem(string maGiaoVien)
+        {
+            LopDTO giaoVienChuNhiem = lopDAO.GetGiaoVienChuNhiem(maGiaoVien);
+
+            if (giaoVienChuNhiem == null)
+            {
+                return false;
+            }
+
+            LopDTO selectedLop = cbo_Lop.SelectedItem as LopDTO;
+            if (giaoVienChuNhiem.MaGVCN == selectedLop.MaGVCN)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    public static class PromptGVCN
+    {
+        public static string ShowDialog(string text, string caption)
+        {
+            Form prompt = new Form()
+            {
+                Width = 500,
+                Height = 150,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Text = caption,
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            Label textLabel = new Label() { Left = 50, Top = 20, Text = text };
+            TextBox textBox = new TextBox() { Left = 50, Top = 50, Width = 400 };
+            Button confirmation = new Button() { Text = "Ok", Left = 350, Width = 100, Top = 70, DialogResult = DialogResult.OK };
+            confirmation.Click += (sender, e) => { prompt.Close(); };
+            prompt.Controls.Add(textBox);
+            prompt.Controls.Add(confirmation);
+            prompt.Controls.Add(textLabel);
+            prompt.AcceptButton = confirmation;
+
+            return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
         }
     }
 }

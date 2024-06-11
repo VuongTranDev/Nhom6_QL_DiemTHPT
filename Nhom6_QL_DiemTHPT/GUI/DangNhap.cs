@@ -35,7 +35,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
                 switch (loaiTaiKhoan)
                 {
                     case "hocsinh":
-                        HomeForm homeForm = new HomeForm();
+                        HomeForm homeForm = new HomeForm(tenDangNhap);
                         homeForm.Show();
                         break;
                     case "admin":
@@ -43,7 +43,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
                         adminForm.Show();
                         break;
                     case "giaovien":
-                        GiaoVienForm giaoVienForm = new GiaoVienForm();
+                        GiaoVienForm giaoVienForm = new GiaoVienForm(tenDangNhap);
                         giaoVienForm.Show();
                         break;
                     default:
@@ -61,6 +61,24 @@ namespace Nhom6_QL_DiemTHPT.GUI
         private void DangNhap_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtTenDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                txtMatKhau.Focus();
+            }
+        }
+
+        private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                button1_Click(sender, e);
+            }
         }
     }
 }

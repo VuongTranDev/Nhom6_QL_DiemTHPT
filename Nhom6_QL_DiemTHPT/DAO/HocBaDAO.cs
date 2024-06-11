@@ -75,5 +75,40 @@ namespace Nhom6_QL_DiemTHPT.DAO
             }
         }
 
+        public void updateHocBa(string mahb, string hanhkiem, string xeploai)
+        {
+            using(IDbConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+                var parameters = new
+                {
+                    MAHB = mahb,
+                    HANHKIEM = hanhkiem,
+                    XEPLOAI = xeploai
+                };
+                connection.Execute("UpdateHocBa", parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void insertHocBa(string mahb, string mahs, string hanhkiem, string xeploai, float diemhk1, float diemhk2, float diemtong)
+        {
+            using (IDbConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                connection.Execute("InsertHocBa", new
+                {
+                    MaHB = mahb,
+                    MaHS = mahs,
+                    HanhKiem = hanhkiem,
+                    XepLoai = xeploai,
+                    DiemHK1 = diemhk1,
+                    DiemHK2 = diemhk2,
+                    DiemTong = diemtong
+                }, commandType: CommandType.StoredProcedure);
+
+                connection.Close();
+            }
+        }
     }
 }
