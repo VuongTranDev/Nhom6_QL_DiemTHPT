@@ -13,7 +13,106 @@ namespace Nhom6_QL_DiemTHPT.DAO
 {
     class HocSinh_LopDAO
     {
+        public DataTable GetTatCaHocSinh()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = (SqlConnection)DBConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand("GetTatCaHocSinh", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
 
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                    try
+                    {
+                        connection.Open();
+                        adapter.Fill(dataTable);
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable GetHocSinhTheoTinhTrang(string tinhTrang)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = (SqlConnection)DBConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand("GetHocSinhTheoTinhTrang", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@TINHTRANG", tinhTrang);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                    try
+                    {
+                        connection.Open();
+                        adapter.Fill(dataTable);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable GetHocSinhTheoLopNamHoc(string maLop)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = (SqlConnection)DBConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand("GetHocSinhTheoLopNamHoc", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@MALOP", maLop);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                    try
+                    {
+                        connection.Open();
+                        adapter.Fill(dataTable);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            return dataTable;
+        }
+        public DataTable GetTatCaHocSinhCoLop()
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = (SqlConnection)DBConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand("GetTatCaHocSinhCoLop", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                    try
+                    {
+                        connection.Open();
+                        adapter.Fill(dataTable);
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            }
+            return dataTable;
+        }
         public DataTable GetHSDaCoLop()
         {
             DataTable dataTable = new DataTable();
@@ -413,5 +512,205 @@ namespace Nhom6_QL_DiemTHPT.DAO
                 capNhatHocSinhLenLop12(item.MAHS);
             }
         }
+
+        // Lưu Ban
+        public List<HOCSINH_LOP> layRaHocSinhLuuBan10()
+        {
+            List<HOCSINH_LOP> listHocSinh = new List<HOCSINH_LOP>();
+            using (SqlConnection connection = (SqlConnection)DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("LayRaHocSinhLuuBan10", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            HOCSINH_LOP hs_lop = new HOCSINH_LOP();
+                            hs_lop.MAHS = reader["MAHS"].ToString();
+                            listHocSinh.Add(hs_lop);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return listHocSinh;
+        }
+        public List<HOCSINH_LOP> layRaHocSinhLuuBan11()
+        {
+            List<HOCSINH_LOP> listHocSinh = new List<HOCSINH_LOP>();
+            using (SqlConnection connection = (SqlConnection)DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("LayRaHocSinhLuuBan11", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            HOCSINH_LOP hs_lop = new HOCSINH_LOP();
+                            hs_lop.MAHS = reader["MAHS"].ToString();
+                            listHocSinh.Add(hs_lop);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return listHocSinh;
+        }
+        public List<HOCSINH_LOP> layRaHocSinhLuuBan12()
+        {
+            List<HOCSINH_LOP> listHocSinh = new List<HOCSINH_LOP>();
+            using (SqlConnection connection = (SqlConnection)DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("LayRaHocSinhLuuBan12", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            HOCSINH_LOP hs_lop = new HOCSINH_LOP();
+                            hs_lop.MAHS = reader["MAHS"].ToString();
+                            listHocSinh.Add(hs_lop);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return listHocSinh;
+        }
+        public void capNhatHocSinhLuuBan10(string maHS)
+        {
+            using (SqlConnection connection = new SqlConnection(DBConnection.getConStr()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("UpdateHocSinhLuuBanLop10", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add("@MAHS", SqlDbType.VarChar).Value = maHS;
+
+                    command.ExecuteNonQuery();
+
+                }
+                connection.Close();
+            }
+        }
+        public void capNhatHocSinhLuuBan11(string maHS)
+        {
+            using (SqlConnection connection = new SqlConnection(DBConnection.getConStr()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("UpdateHocSinhLuuBanLop11", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add("@MAHS", SqlDbType.VarChar).Value = maHS;
+
+                    command.ExecuteNonQuery();
+
+                }
+                connection.Close();
+            }
+        }
+        public void capNhatHocSinhLuuBan12(string maHS)
+        {
+            using (SqlConnection connection = new SqlConnection(DBConnection.getConStr()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("UpdateHocSinhLuuBanLop12", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add("@MAHS", SqlDbType.VarChar).Value = maHS;
+
+                    command.ExecuteNonQuery();
+
+                }
+                connection.Close();
+            }
+        }
+        public void luuBanHocSinh()
+        {
+            List<HOCSINH_LOP> listHocSinh10 = layRaHocSinhLuuBan10();
+            List<HOCSINH_LOP> listHocSinh11 = layRaHocSinhLuuBan11();
+            List<HOCSINH_LOP> listHocSinh12 = layRaHocSinhLuuBan12();
+
+            if(listHocSinh10.Count > 0)
+            {
+                foreach (HOCSINH_LOP item in listHocSinh10)
+                {
+                    capNhatHocSinhLuuBan10(item.MAHS);
+                }
+            }
+            if(listHocSinh11.Count > 0)
+            {
+                foreach (HOCSINH_LOP item in listHocSinh11)
+                {
+                    capNhatHocSinhLuuBan11(item.MAHS);
+                }
+            }
+            if (listHocSinh12.Count > 0)
+            {
+                foreach (HOCSINH_LOP item in listHocSinh11)
+                {
+                    capNhatHocSinhLuuBan12(item.MAHS);
+                }
+            }
+
+        }
+        public void xepLopTheoDieuKien(string maHS, string maLop)
+        {
+            using (SqlConnection connection = new SqlConnection(DBConnection.getConStr()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("UpdateHocSinhTheoDieuKien", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add("@MAHS", SqlDbType.VarChar).Value = maHS;
+                    command.Parameters.Add("@MALOP", SqlDbType.VarChar).Value = maLop;
+
+                    command.ExecuteNonQuery();
+
+                }
+                connection.Close();
+            }
+        }
+        public string layMaLopKhiCoTenLop(string tenLop, int nienKhoa)
+        {
+            string maLop = "";
+            using (SqlConnection connection = new SqlConnection(DBConnection.getConStr()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("LayRaMaLopKhiCoTenLop", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add("@TENLOP", SqlDbType.NVarChar).Value = tenLop;
+                    command.Parameters.Add("@NIENKHOA", SqlDbType.Int).Value = nienKhoa;
+
+                    SqlParameter parameter = new SqlParameter("@MALOP", SqlDbType.VarChar, 20);
+                    parameter.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(parameter);
+
+                    command.ExecuteNonQuery();
+
+                    maLop = command.Parameters["@MALOP"].Value.ToString();
+                }
+                connection.Close();
+            }
+            return maLop;
+        }
+
     }
 }
