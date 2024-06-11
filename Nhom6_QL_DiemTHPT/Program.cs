@@ -16,7 +16,11 @@ namespace Nhom6_QL_DiemTHPT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< Updated upstream
             Application.Run(new GUI.Diem());
+=======
+            Application.Run(new GUI.PhanCongGV());
+>>>>>>> Stashed changes
         }
     }
 }

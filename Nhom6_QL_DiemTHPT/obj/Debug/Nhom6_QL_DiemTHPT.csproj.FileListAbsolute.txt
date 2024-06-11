@@ -17,3 +17,24 @@ D:\Study\HK 6\TH PTTKHT\Project\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\En
 D:\Study\HK 6\TH PTTKHT\Project\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.csproj.CopyComplete
 D:\Study\HK 6\TH PTTKHT\Project\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.exe
 D:\Study\HK 6\TH PTTKHT\Project\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.pdb
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\Nhom6_QL_DiemTHPT.exe.config
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\Nhom6_QL_DiemTHPT.exe
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\Nhom6_QL_DiemTHPT.pdb
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\Dapper.dll
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\EntityFramework.dll
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\EntityFramework.SqlServer.dll
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\Dapper.xml
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\EntityFramework.xml
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\EntityFramework.SqlServer.xml
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.csproj.AssemblyReference.cache
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.Diem.resources
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.HocBa.resources
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.HocSinhGUI.resources
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.PhanCongGV.resources
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.XepLop.resources
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.Properties.Resources.resources
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.csproj.GenerateResource.cache
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.csproj.CoreCompileInputs.cache
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.csproj.CopyComplete
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.exe
+E:\HK6\HTTT\BaitapNhom\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.pdb
