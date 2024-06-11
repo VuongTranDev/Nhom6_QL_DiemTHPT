@@ -1,7 +1,7 @@
 ﻿
-namespace Nhom6_QL_DiemTHPT
+namespace Nhom6_QL_DiemTHPT.GUI
 {
-    partial class Form1
+    partial class AdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,9 @@ namespace Nhom6_QL_DiemTHPT
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Text = "AdminForm";
         }
 
         #endregion
     }
 }
-

@@ -14,42 +14,60 @@ namespace Nhom6_QL_DiemTHPT.GUI
 {
     public partial class HocBa : Form
     {
-        private readonly HocBaDAO hocBaDAO;
-        private readonly HocSinhDAO hocSinhDAO;
-        public HocBa()
+        private readonly HocBaDAO hocBaDAO = new HocBaDAO();
+        private readonly HocSinhDAO hocSinhDAO= new HocSinhDAO();
+        private readonly LopDAO lopDAO = new LopDAO();
+        public HocBa()     
         {
             InitializeComponent();
-            hocBaDAO = new HocBaDAO();
-            hocSinhDAO = new HocSinhDAO();
         }
         private void HocBa_Load(object sender, EventArgs e)
         {
-            loadDataGridView();
+            //loadDataGridView();
             loadCboXepLoai();
             loadCboHanhKiem();
             loadMaHS();
+            loadCboLop();
         }
 
-        private void loadDataGridView()
+        private void loadDataGridView(string malop = null)
         {
-            List<HocBaDTO> hocBaList = hocBaDAO.GetAllHocBa();
+            List<HocBaDTO> hocBaList;
+
+            if (string.IsNullOrEmpty(malop))
+            {
+                hocBaList = hocBaDAO.GetAllHocBa();
+            }
+            else
+            {
+                hocBaList = hocBaDAO.GetHocBaByLop(malop);
+            }
+
             dataGridView1.DataSource = hocBaList;
         }
 
+
         private void btnTinhDiemTong_Click(object sender, EventArgs e)
         {
-            if(hocBaDAO.TinhDiemTong())
+            if (hocBaDAO.TinhDiemTong())
             {
-                loadDataGridView();
+                var malop = cbo_Lop.SelectedItem as LopDTO;
+                if (malop != null)
+                {
+                    loadDataGridView(malop.MaLop);
+                }
                 MessageBox.Show("Đã cập nhật điểm thành công!");
             }
-            
         }
 
         private void btnTinhXepLoai_Click(object sender, EventArgs e)
         {
             hocBaDAO.TinhXepLoaiHanhKiem();
-            loadDataGridView();
+            var malop = cbo_Lop.SelectedItem as LopDTO;
+            if (malop != null)
+            {
+                loadDataGridView(malop.MaLop);
+            }
             MessageBox.Show("Đã cập nhật xếp loại và hạnh kiểm thành công!");
         }
 
@@ -75,6 +93,25 @@ namespace Nhom6_QL_DiemTHPT.GUI
             cboMaHS.DataSource = maHSList;
         }
 
+        private void loadCboLop()
+        {
+            cbo_Lop.Items.Clear();
+            List<LopDTO> lopList = lopDAO.GetLop();
+
+            cbo_Lop.DisplayMember = "TENLOP";
+            cbo_Lop.ValueMember = "MALOP";
+            cbo_Lop.DataSource = lopList;
+
+            cbo_Lop.SelectedIndexChanged += Cbo_Lop_SelectedIndexChanged;
+        }
+
+        private void Cbo_Lop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedLop = cbo_Lop.SelectedValue.ToString();
+            loadDataGridView(selectedLop);
+        }
+
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -82,9 +119,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
 
             if (rowIndex >= 0 && rowIndex < dataGridView1.Rows.Count)
             {
-
                 DataGridViewRow row = dataGridView1.Rows[rowIndex];
-
                 txtMAHB.Text = row.Cells["MAHB"].Value.ToString();
                 txtDiemHk1.Text = row.Cells["DIEMHK1"].Value.ToString();
                 txtDiemHK2.Text = row.Cells["DIEMHK2"].Value.ToString();

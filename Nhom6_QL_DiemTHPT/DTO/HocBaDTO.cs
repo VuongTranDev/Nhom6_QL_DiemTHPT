@@ -8,7 +8,7 @@ namespace Nhom6_QL_DiemTHPT.DTO
 {
     public class HocBaDTO
     {
-        public int ID { get ; set ; }
+        //public int ID { get ; set ; }
         public string MAHB { get; set; }
         public string MAHS { get; set; }
         public string XEPLOAI { get; set; }

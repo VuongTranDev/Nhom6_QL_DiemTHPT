@@ -60,23 +60,50 @@
   <ItemGroup>
     <Compile Include="DAO\DBConnection.cs" />
     <Compile Include="DAO\DiemDAO.cs" />
+    <Compile Include="DAO\GiaoVienDAO.cs" />
     <Compile Include="DAO\HocBaDAO.cs" />
     <Compile Include="DAO\HocKyDAO.cs" />
     <Compile Include="DAO\HocSinhDAO.cs" />
     <Compile Include="DAO\LopDAO.cs" />
+    <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DAO\ThongTinCaNhanDAO.cs" />
+    <Compile Include="DAO\ThongTinHocSinhDAO.cs" />
+    <Compile Include="DAO\XemDiemDAO.cs" />
+    <Compile Include="DTO\GiaoVienDTO.cs" />
     <Compile Include="DTO\HocBaDTO.cs" />
     <Compile Include="DTO\HocKyDTO.cs" />
     <Compile Include="DTO\HocSinhDTO.cs" />
     <Compile Include="DTO\LopDTO.cs" />
     <Compile Include="DTO\MonHocDTO.cs" />
     <Compile Include="DTO\DiemDTO.cs" />
+    <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="DTO\ThongTinCaNhanDTO.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DTO\ThongTinHocSinhDTO.cs" />
+    <Compile Include="DTO\XemDiemDTO.cs" />
+    <Compile Include="GUI\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GiaoVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GiaoVienForm.Designer.cs">
+      <DependentUpon>GiaoVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formManager.cs" />
+    <Compile Include="GUI\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Diem.cs">
       <SubType>Form</SubType>
@@ -96,16 +123,34 @@
     <Compile Include="GUI\HocSinh.Designer.cs">
       <DependentUpon>HocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\XemDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\XemDiem.Designer.cs">
+      <DependentUpon>XemDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Diem.resx">
       <DependentUpon>Diem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GiaoVienForm.resx">
+      <DependentUpon>GiaoVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\HocBa.resx">
       <DependentUpon>HocBa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\HocSinh.resx">
       <DependentUpon>HocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\XemDiem.resx">
+      <DependentUpon>XemDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

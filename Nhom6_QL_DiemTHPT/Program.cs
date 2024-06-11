@@ -16,7 +16,7 @@ namespace Nhom6_QL_DiemTHPT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI.Diem());
+            Application.Run(new GUI.DangNhap());
         }
     }
 }
