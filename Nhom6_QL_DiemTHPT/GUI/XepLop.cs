@@ -115,6 +115,13 @@ namespace Nhom6_QL_DiemTHPT.GUI
         private void btn_XepLopHocSinhMoi_Click(object sender, EventArgs e)
         {
             hocSinh_LopDAO.xepLopHocSinhMoi();
+            MessageBox.Show("Thêm thành công");
+        }
+
+        private void btn_XepLopHocSinhCu_Click(object sender, EventArgs e)
+        {
+            hocSinh_LopDAO.lenLopHocSinh();
+            MessageBox.Show("Cập nhật thành công");
         }
     }
 }

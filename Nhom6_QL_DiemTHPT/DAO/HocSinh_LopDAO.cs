@@ -222,15 +222,12 @@ namespace Nhom6_QL_DiemTHPT.DAO
             List<HOCSINH> hocSinhs = layRaHocSinh();
             foreach (HOCSINH item in hocSinhs)
             {
-                foreach(LOP lop in lops)
+                string maLop = RandomMALOP(lops);
+                if (kiemTraSoLuongHS() == false)
                 {
-                    if(kiemTraSoLuongHS() == false)
-                    {
-                        updateSoLuongLop(lop.MALOP);
-                    }
-                    string maLop = RandomMALOP(lops);
-                    callProcXepLop(maLop, item.MAHS);
+                    updateSoLuongLop(maLop);
                 }
+                callProcXepLop(maLop, item.MAHS);
             }
         }
 
@@ -248,10 +245,7 @@ namespace Nhom6_QL_DiemTHPT.DAO
                         while (reader.Read())
                         {
                             HOCSINH hs = new HOCSINH();
-                            for (int i = 0; i < reader.FieldCount; i++)
-                            {
-                                hs.MAHS = reader["MAHS"].ToString();
-                            }
+                            hs.MAHS = reader["MAHS"].ToString();
                             listHocSinh.Add(hs);
                         }
                     }
@@ -273,22 +267,151 @@ namespace Nhom6_QL_DiemTHPT.DAO
                     {
                         while (reader.Read())
                         {
-                            for (int i = 0; i < reader.FieldCount; i++)
-                            {
-                                LOP lop = new LOP();
-                                lop.MALOP = reader["MALOP"].ToString();
-                                lop.NIENKHOA = Convert.ToInt32(reader["NIENKHOA"].ToString());
-                                lop.TENLOP = reader["TENLOP"].ToString();
-                                lop.SOLUONG = Convert.ToInt32(reader["SOLUONG"].ToString());
-                                lop.SOLUONGHOCSINH = Convert.ToInt32(reader["SOLUONGHOCSINH"].ToString());
-                                lops.Add(lop);
-                            }
+                            LOP lop = new LOP();
+                            lop.MALOP = reader["MALOP"].ToString();
+                            lop.NIENKHOA = Convert.ToInt32(reader["NIENKHOA"].ToString());
+                            lop.TENLOP = reader["TENLOP"].ToString();
+                            lop.SOLUONG = Convert.ToInt32(reader["SOLUONG"].ToString());
+                            lop.SOLUONGHOCSINH = Convert.ToInt32(reader["SOLUONGHOCSINH"].ToString());
+                            lops.Add(lop);
                         }
                     }
                 }
                 connection.Close();
             }
             return lops;
+        }
+        public void layRaLopCuaHocSinh(string maHS)
+        {
+            using (SqlConnection connection = new SqlConnection(DBConnection.getConStr()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("LayRaLopCuaHocSinh", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add("@MAHS", SqlDbType.VarChar).Value = maHS;
+
+                    command.ExecuteNonQuery();
+
+                }
+                connection.Close();
+            }
+        }
+        public void capNhatHocSinhLenLop10(string maHS)
+        {
+            using (SqlConnection connection = new SqlConnection(DBConnection.getConStr()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("UpdateHocSinhLenLop10", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add("@MAHS", SqlDbType.VarChar).Value = maHS;
+
+                    command.ExecuteNonQuery();
+
+                }
+                connection.Close();
+            }
+        }
+        public void capNhatHocSinhLenLop11(string maHS)
+        {
+            using (SqlConnection connection = new SqlConnection(DBConnection.getConStr()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("UpdateHocSinhLenLop11", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add("@MAHS", SqlDbType.VarChar).Value = maHS;
+
+                    command.ExecuteNonQuery();
+
+                }
+                connection.Close();
+            }
+        }
+        public void capNhatHocSinhLenLop12(string maHS)
+        {
+            using (SqlConnection connection = new SqlConnection(DBConnection.getConStr()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("UpdateHocSinhLenLop12", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add("@MAHS", SqlDbType.VarChar).Value = maHS;
+
+                    command.ExecuteNonQuery();
+
+                }
+                connection.Close();
+            }
+        }
+        public List<HOCSINH_LOP> layRaHocSinhLenLop10()
+        {
+            List<HOCSINH_LOP> listHocSinh = new List<HOCSINH_LOP>();
+            using (SqlConnection connection = (SqlConnection)DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("LayRaHocSinhLenLop10", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            HOCSINH_LOP hs_lop = new HOCSINH_LOP();
+                            hs_lop.MAHS = reader["MAHS"].ToString();
+                            listHocSinh.Add(hs_lop);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return listHocSinh;
+        }
+        public List<HOCSINH_LOP> layRaHocSinhLenLop11()
+        {
+            List<HOCSINH_LOP> listHocSinh = new List<HOCSINH_LOP>();
+            using (SqlConnection connection = (SqlConnection)DBConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("LayRaHocSinhLenLop11", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            HOCSINH_LOP hs_lop = new HOCSINH_LOP();
+                            hs_lop.MAHS = reader["MAHS"].ToString();
+                            listHocSinh.Add(hs_lop);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return listHocSinh;
+        }
+        public void lenLopHocSinh()
+        {
+            List<HOCSINH_LOP> listHocSinh10 = layRaHocSinhLenLop10();
+            List<HOCSINH_LOP> listHocSinh11 = layRaHocSinhLenLop11();
+
+            foreach(HOCSINH_LOP item in listHocSinh10)
+            {
+                capNhatHocSinhLenLop11(item.MAHS);
+            }
+            foreach(HOCSINH_LOP item in listHocSinh11)
+            {
+                capNhatHocSinhLenLop12(item.MAHS);
+            }
         }
     }
 }

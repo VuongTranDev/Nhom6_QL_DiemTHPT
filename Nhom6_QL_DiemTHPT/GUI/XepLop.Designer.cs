@@ -220,6 +220,7 @@ namespace Nhom6_QL_DiemTHPT.GUI
             this.btn_XepLopHocSinhCu.TabIndex = 11;
             this.btn_XepLopHocSinhCu.Text = "Xếp lớp học sinh cũ";
             this.btn_XepLopHocSinhCu.UseVisualStyleBackColor = true;
+            this.btn_XepLopHocSinhCu.Click += new System.EventHandler(this.btn_XepLopHocSinhCu_Click);
             // 
             // btn_XepLopHocSinhMoi
             // 
