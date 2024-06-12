@@ -1,4 +1,4 @@
-namespace Nhom6_QL_DiemTHPT.ASD
+namespace Nhom6_QL_DiemTHPT.DTO
 {
     using System;
     using System.Collections.Generic;
@@ -22,5 +22,15 @@ namespace Nhom6_QL_DiemTHPT.ASD
         [Required]
         [StringLength(10)]
         public string MALOP { get; set; }
+        [Required]
+        [StringLength(10)]
+        public string MAMH { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string TENMH { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string TENLOP { get; set; }
     }
 }

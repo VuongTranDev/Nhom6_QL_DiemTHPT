@@ -17,7 +17,7 @@ namespace Nhom6_QL_DiemTHPT.DAO
 
             using (IDbConnection connection = DBConnection.GetConnection())
             {
-                connection.Open();
+                @connection.Open();
                 return connection.Query<LopDTO>(query).ToList();
             }
         }

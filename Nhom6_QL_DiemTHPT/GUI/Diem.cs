@@ -109,16 +109,16 @@ namespace Nhom6_QL_DiemTHPT.GUI
 
         private void HienThiBangDiem(string maHS, string mahk)
         {
-            List<DiemDTO> diemList = diemDAO.GetDiemByMaHS(maHS, mahk);
-            dataGridView1.DataSource = diemList;
+                List<DiemDTO> diemList = diemDAO.GetDiemByMaHS(maHS, mahk);
+                dataGridView1.DataSource = diemList;
 
-            dataGridView1.Columns.Clear();
+                dataGridView1.Columns.Clear();
 
-            dataGridView1.Columns.Add("MAMH", "Mã Môn học");
-            dataGridView1.Columns["MAMH"].DataPropertyName = "MAMH";
+                dataGridView1.Columns.Add("MAMH", "Mã Môn học");
+                dataGridView1.Columns["MAMH"].DataPropertyName = "MAMH";
 
-            dataGridView1.Columns.Add("TENMH", "Môn học");
-            dataGridView1.Columns["TENMH"].DataPropertyName = "TENMH";
+                dataGridView1.Columns.Add("TENMH", "Môn học");
+                dataGridView1.Columns["TENMH"].DataPropertyName = "TENMH";
 
             dataGridView1.Columns.Add("MAHK", "Học kỳ");
             dataGridView1.Columns["MAHK"].DataPropertyName = "MAHK";
