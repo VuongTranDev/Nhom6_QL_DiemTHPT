@@ -1,4 +1,4 @@
-namespace Nhom6_QL_DiemTHPT.ASD
+namespace Nhom6_QL_DiemTHPT.DTO
 {
     using System;
     using System.Collections.Generic;
@@ -23,5 +23,7 @@ namespace Nhom6_QL_DiemTHPT.ASD
 
         [StringLength(10)]
         public string MAGVCN { get; set; }
+        public int SOLUONG { get; set; }
+        public int SOLUONGHOCSINH { get; set; }
     }
 }

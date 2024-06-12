@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Nhom6_QL_DiemTHPT.ASD
+namespace Nhom6_QL_DiemTHPT.DTO
 {
     public partial class Nhom6_QL_DiemTHPT : DbContext
     {
