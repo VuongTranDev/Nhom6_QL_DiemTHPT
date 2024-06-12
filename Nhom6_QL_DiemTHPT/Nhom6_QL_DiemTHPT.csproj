@@ -42,11 +42,34 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.8.0.0\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,12 +87,18 @@
     <Compile Include="DAO\HocBaDAO.cs" />
     <Compile Include="DAO\HocKyDAO.cs" />
     <Compile Include="DAO\HocSinhDAO.cs" />
+    <Compile Include="DAO\HocSinh_LopDAO.cs" />
     <Compile Include="DAO\LopDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DAO\ThongTinCaNhanDAO.cs" />
     <Compile Include="DAO\ThongTinHocSinhDAO.cs" />
     <Compile Include="DAO\XemDiemDAO.cs" />
+    <Compile Include="DTO\DIEM.cs" />
+    <Compile Include="DTO\DiemDTO.cs" />
+    <Compile Include="DTO\GIANGDAY.cs" />
+    <Compile Include="DTO\GIAOVIEN.cs" />
     <Compile Include="DTO\GiaoVienDTO.cs" />
+    <Compile Include="DTO\HOCBA.cs" />
     <Compile Include="DTO\HocBaDTO.cs" />
     <Compile Include="DTO\HOCKY.cs" />
     <Compile Include="DTO\HocKyDTO.cs" />
@@ -80,10 +109,13 @@
     <Compile Include="DTO\LopDTO.cs" />
     <Compile Include="DTO\MONHOC.cs" />
     <Compile Include="DTO\MonHocDTO.cs" />
-    <Compile Include="DTO\DiemDTO.cs" />
+    <Compile Include="DTO\Nhom6_QL_DiemTHPT.cs" />
+    <Compile Include="DTO\TAIKHOAN.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
+    <Compile Include="DTO\THONGTINCANHAN.cs" />
     <Compile Include="DTO\ThongTinCaNhanDTO.cs" />
     <Compile Include="DTO\ThongTinHocSinhDTO.cs" />
+    <Compile Include="DTO\TRUONG.cs" />
     <Compile Include="DTO\XemDiemDTO.cs" />
     <Compile Include="GUI\AdminForm.cs">
       <SubType>Form</SubType>
@@ -134,6 +166,12 @@
     <Compile Include="GUI\XemDiem.Designer.cs">
       <DependentUpon>XemDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\XepLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\XepLop.Designer.cs">
+      <DependentUpon>XepLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\DangNhap.resx">
@@ -156,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\XemDiem.resx">
       <DependentUpon>XemDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\XepLop.resx">
+      <DependentUpon>XepLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
