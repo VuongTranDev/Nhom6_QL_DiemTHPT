@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="DAO\DBConnection.cs" />
     <Compile Include="DAO\DiemDAO.cs" />
+    <Compile Include="DAO\GiangDayDAO.cs" />
     <Compile Include="DAO\GiaoVienDAO.cs" />
     <Compile Include="DAO\HocBaDAO.cs" />
     <Compile Include="DAO\HocKyDAO.cs" />
@@ -160,17 +161,17 @@
     <Compile Include="GUI\HocSinh.Designer.cs">
       <DependentUpon>HocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\PhanCongGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PhanCongGV.Designer.cs">
+      <DependentUpon>PhanCongGV.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\XemDiem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\XemDiem.Designer.cs">
       <DependentUpon>XemDiem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\XepLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\XepLop.Designer.cs">
-      <DependentUpon>XepLop.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -192,11 +193,11 @@
     <EmbeddedResource Include="GUI\HocSinh.resx">
       <DependentUpon>HocSinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PhanCongGV.resx">
+      <DependentUpon>PhanCongGV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\XemDiem.resx">
       <DependentUpon>XemDiem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\XepLop.resx">
-      <DependentUpon>XepLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

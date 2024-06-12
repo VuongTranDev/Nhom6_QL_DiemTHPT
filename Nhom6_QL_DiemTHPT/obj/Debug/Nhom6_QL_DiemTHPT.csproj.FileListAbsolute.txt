@@ -83,3 +83,8 @@ D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\System.N
 D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\bin\Debug\System.Text.Encoding.CodePages.xml
 >>>>>>> NhutHao
+D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.DangNhap.resources
+D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.GiaoVienForm.resources
+D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.HomeForm.resources
+D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.PhanCongGV.resources
+D:\Semeter VI\PTTKHT\Code\Nhom6_QL_DiemTHPT\Nhom6_QL_DiemTHPT\obj\Debug\Nhom6_QL_DiemTHPT.GUI.XemDiem.resources

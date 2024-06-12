@@ -17,7 +17,8 @@ namespace Nhom6_QL_DiemTHPT.DTO
 
         [StringLength(50)]
         public string CHUYENMON { get; set; }
-
+        [StringLength(50)]
+        public string HOTEN { get; set; }
         [Required]
         [StringLength(10)]
         public string MAMH { get; set; }
